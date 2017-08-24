@@ -1,44 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
     <script>
-      //some default pre init
-      var PB = PB || {};PB.q = PB.q || [];PB.events = PB.events || [];
-
-      //********** Update these fields ********
-      //PushBots ApplicationId (required)
-      PB.app_id = "599edda54a9efaf12e8b4568";
-      //Your domain name, must be HTTPS or localhost  (required)
-      PB.domain = "localhost";
-      //Update and uncomment it if you are using custom safari certificate for your app
-      //PB.safari_push_id = "web.com.pushbots.main";
-      //****************************************
-
-      PB.logging_enabled = false;
-      PB.auto_subscribe = true;
-
-      //Welcome notification message
-      PB.welcome = {title:"Welcome 🙌🎉",message:"Thanks for subscribing!", url :PB.domain};
-
-      function sendNotification(){
-        PB.register();
-        PB.q.push(["sendNotification", {title:"Hey 🐬",message:"Why not?", url :"https://google.com"}]);
-      }
-
-      //Pushbots events
-      PB.events.push(["onRegistered", function(data){
-        console.log("onRegistered" , data);
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(["init", {
+        appId: "b5b13688-191e-4876-9d98-329bc14fc9bf",
+        autoRegister: false,
+        notifyButton: {
+          enable: true /* Set to false to hide */
+        }
       }]);
-
-      PB.events.push(["onRegisteredOnPushBots", function(data){
-        console.log("onRegisteredOnPushBots", data);
-      }]);
-
     </script>
-
-    <script src="//cdn.pushbots.com/js/sdk.min.js" type="text/javascript" onload="PB.init()" async></script>
 </head>
 <body>
 

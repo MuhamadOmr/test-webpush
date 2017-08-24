@@ -12,10 +12,9 @@ var server = restify.createServer();
 // req.body
 server.use(restify.plugins.bodyParser());
 
-server.get('/', restify.plugins.serveStatic({
+server.get(/.*/, restify.plugins.serveStatic({
   directory: './static',
-  file: 'index.html',
-  appendRequestPath: false
+  default: 'index.html'
 }));
 
 server.listen(8080, function() {
