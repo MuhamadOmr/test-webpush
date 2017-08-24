@@ -18,6 +18,6 @@ server.get('/', restify.plugins.serveStatic({
   appendRequestPath: false
 }));
 
-server.listen(80, function() {
+server.listen(8080, function() {
   console.log('%s listening at %s', server.name, server.url);
 });
