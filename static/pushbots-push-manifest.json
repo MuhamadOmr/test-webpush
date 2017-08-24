@@ -1,0 +1,7 @@
+{
+  "name": "test-webpush",
+  "short_name": "test-webpush",
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "519659307484"
+}
